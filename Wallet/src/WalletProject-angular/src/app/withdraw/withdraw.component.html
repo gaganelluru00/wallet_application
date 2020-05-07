@@ -1,0 +1,62 @@
+<div class="navbar">
+
+    
+    <a  class="nav-link" (click)="openHome()"><span class="glyphicon glyphicon-home"></span>Home</a>
+
+
+
+    <a  class="nav-link" (click)="openWithdraw()"><span class="glyphicon glyphicon-hand-down"></span>Withdraw Amount</a>
+
+
+    <a  class="nav-link" (click)="openDeposit()"><span class="glyphicon glyphicon-hand-up"></span>Deposit Amount</a>
+
+    <a  class="nav-link"(click)="openFund()"><span class="glyphicon glyphicon-send"></span> Transfer</a>
+
+    <a  class="nav-link" (click)="openDetails()"><span class="glyphicon glyphicon-check"></span>Show Details</a>
+
+    <a  class="nav-link" (click)="openTransaction()"><span class="glyphicon glyphicon-print"></span>Print Transactions</a>
+
+    <a  class="nav-link" (click)="openUpdate()" ><span class="glyphicon glyphicon-edit"></span>Update Details</a>
+
+    <a  class="nav-link" (click)="openDelete()"><span class="glyphicon glyphicon-trash"></span>Delete Account</a>
+
+    <a  class="nav-link" (click)="openLogout()"><span class="glyphicon glyphicon-off"></span>Logout</a>
+
+</div>
+
+
+
+<div class="jumbotron">
+    <div class="container">
+        <form #withdrawForm= "ngForm" (ngSubmit)="onWithdraw(withdrawForm.value)">
+            <!--<div class="form-group">
+                <label>Username</label>
+                <input type="text"  required #userRef="ngModel" class="form-control" [(ngModel)]="with.username" name="username" ngModel>
+                <div [hidden]="userRef.valid||userRef.untouched" class="alert alert-danger">
+                    please enter your username
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" required #passRef="ngModel" minlength="6" class="form-control" [(ngModel)]="with.password" name="password" ngModel>
+            <div *ngIf="passRef.errors&&(passRef.dirty||passRef.touched)" class="alert alert-danger">
+                <div [hidden]="!passRef.errors.required" >
+                    please enter your password
+                </div>
+                <div [hidden]="!passRef.errors.minlength" >
+                    password should be atleast 6 characters
+                </div>
+            </div>
+           </div>-->
+           <div class="form-group">
+            <label>Withdraw Amount</label>
+            <input type="number"  required #amountRef="ngModel" class="form-control" [(ngModel)]="with.amount" name="amount" ngModel>
+            <div [hidden]="amountRef.valid||amountRef.untouched" class="alert alert-danger">
+                please enter the amount
+            </div>
+        </div>
+            <button [disabled]="!withdrawForm.form.valid" type="submit" class="btn btn-primary" (click)="withdrawAmount()">Withdraw Amount</button>
+        </form>
+    </div>
+</div>

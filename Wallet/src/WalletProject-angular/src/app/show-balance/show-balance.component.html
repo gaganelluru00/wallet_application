@@ -1,0 +1,53 @@
+<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+    <ul class="nav navbar-nav">
+       
+        <li class="nav-item">
+            <a  class="nav-link" (click)="openWithdraw()">Withdraw Amount</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" (click)="openDeposit()">Deposit Amount</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link"(click)="openFund()">Fund Transfer</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" (click)="openBalance()">Show Balance</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" (click)="openTransaction()">Print Transactions</a>
+        </li>
+      
+</ul>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <form #balanceForm= "ngForm" (ngSubmit)="onBalance(balanceForm.value)">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text"  required #userRef="ngModel" class="form-control" [(ngModel)]="bal.username" name="username" ngModel>
+                <div [hidden]="userRef.valid||userRef.untouched" class="alert alert-danger">
+                    please enter your username
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" required #passRef="ngModel" minlength="6" class="form-control" [(ngModel)]="bal.password" name="password" ngModel>
+            <div *ngIf="passRef.errors&&(passRef.dirty||passRef.touched)" class="alert alert-danger">
+                <div [hidden]="!passRef.errors.required" >
+                    please enter your password
+                </div>
+                <div [hidden]="!passRef.errors.minlength" >
+                    password should be atleast 6 characters
+                </div>
+            </div>
+           </div>
+           
+            <button [disabled]="!balanceForm.form.valid" type="submit" class="btn btn-primary"(click)="getData()">Show Balance Amount</button>
+        </form>
+    </div>
+</div>
+<h1>{{balance}}</h1>-->

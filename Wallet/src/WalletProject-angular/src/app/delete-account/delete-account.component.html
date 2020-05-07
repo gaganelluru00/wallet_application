@@ -1,0 +1,41 @@
+<div class="navbar">
+
+    
+    <a  class="nav-link" (click)="openHome()"><span class="glyphicon glyphicon-home"></span>Home</a>
+
+
+
+    <a  class="nav-link" (click)="openWithdraw()"><span class="glyphicon glyphicon-hand-down"></span>Withdraw Amount</a>
+
+
+    <a  class="nav-link" (click)="openDeposit()"><span class="glyphicon glyphicon-hand-up"></span>Deposit Amount</a>
+
+    <a  class="nav-link"(click)="openFund()"><span class="glyphicon glyphicon-send"></span> Transfer</a>
+
+    <a  class="nav-link" (click)="openDetails()"><span class="glyphicon glyphicon-check"></span>Show Details</a>
+
+    <a  class="nav-link" (click)="openTransaction()"><span class="glyphicon glyphicon-print"></span>Print Transactions</a>
+
+    <a  class="nav-link" (click)="openUpdate()" ><span class="glyphicon glyphicon-edit"></span>Update Details</a>
+
+    <a  class="nav-link" (click)="openDelete()"><span class="glyphicon glyphicon-trash"></span>Delete Account</a>
+
+    <a  class="nav-link" (click)="openLogout()"><span class="glyphicon glyphicon-off"></span>Logout</a>
+
+</div>
+<div class="back">
+    
+        <form #printForm= "ngForm">
+            <br><br>
+            <h2 style="text-align: center;"><i>Are you sure?</i></h2>
+            <br><br>
+            <h2 style="text-align: center;"><i>The account will be deleted</i></h2>
+            <br><br><br>
+          
+          
+            <button  style="margin-left: 875px;"[disabled]="!printForm.form.valid" type="submit" class="btn btn-primary" (click)="deleteDetails()">Delete Account</button>
+        </form>
+    
+</div>
+
+

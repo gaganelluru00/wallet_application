@@ -1,0 +1,88 @@
+
+<body>
+    <br><br><br>
+    <div class="signup-form">
+        <form #userForm="ngForm">
+            <h2>Create Account</h2>
+            
+            <hr>
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <div class="input-group">
+                    <label style="color: black;">User Id</label>
+                    <input type="text"  style="border-radius: 10px;" #idRef="ngModel" required class="form-control" [(ngModel)]="acc.userId" name="userId" ngModel>
+                    <i class="glyphicon glyphicon-italic form-control-feedback"></i>
+                    
+                    <div [hidden]="idRef.valid||idRef.untouched" class="alert alert-danger">
+                        please enter account id
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <div class="input-group">
+                    <label style="color: black;">Email</label>
+                <input type="email"  style="border-radius: 10px;" #emailRef="ngModel" required class="form-control" [(ngModel)]="acc.email" name="email" ngModel>
+                <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+
+                <div [hidden]="emailRef.valid||emailRef.untouched" class="alert alert-danger">
+                    please enter your email
+                </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <div class="input-group">
+                    <label style="color: black;">Mobile-No</label>
+                   
+                <input type="number"  style="border-radius: 10px;" required #mobileRef="ngModel" class="form-control" [(ngModel)]="acc.mobile" name="mobile" ngModel>
+                <i class="glyphicon glyphicon-phone form-control-feedback"></i>
+               
+                <div [hidden]="mobileRef.valid||mobileRef.untouched" class="alert alert-danger">
+                    please enter your mobile number
+                </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <div class="input-group">
+                    <label style="color: black;">AccountType</label>
+                    <input type="text"  style="border-radius: 10px;" required #nameRef="ngModel" class="form-control" [(ngModel)]="acc.accountType" name="accountType" ngModel>
+                    <i class="glyphicon glyphicon-credit-card form-control-feedback"></i>
+                    
+                    <div [hidden]="nameRef.valid||nameRef.untouched" class="alert alert-danger">
+                        please enter the selected type of account
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <div class="input-group">
+                    <label style="color: black;">Username</label>
+                    <input type="text"   style="border-radius: 10px;" required #userRef="ngModel" class="form-control" [(ngModel)]="acc.username" name="username" ngModel>
+                    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+                    <div [hidden]="userRef.valid||userRef.untouched" class="alert alert-danger">
+                        please enter your username
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <div class="input-group">
+                    <label style="color: black;">Password</label>
+                <input type="password" required   style="border-radius: 10px;" #passRef="ngModel" minlength="6" class="form-control" [(ngModel)]="acc.password" name="password" ngModel>
+                <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+                <div *ngIf="passRef.errors&&(passRef.dirty||passRef.touched)" class="alert alert-danger">
+                <div [hidden]="!passRef.errors.required" >
+                    please enter your password
+                </div>
+                <div [hidden]="!passRef.errors.minlength" >
+                    password should be atleast 6 characters
+                </div>
+            </div>
+                </div>
+            </div>
+            
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary" (click)="addAccount()">Create Account</button>
+            </div>
+        </form>
+        
+    </div>
+    <br><br><br><br>
+    </body>
+                              

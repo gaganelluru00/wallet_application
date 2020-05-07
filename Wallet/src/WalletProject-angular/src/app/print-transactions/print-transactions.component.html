@@ -1,0 +1,56 @@
+<div class="navbar">
+
+    
+    <a  class="nav-link" (click)="openHome()"><span class="glyphicon glyphicon-home"></span>Home</a>
+
+
+
+    <a  class="nav-link" (click)="openWithdraw()"><span class="glyphicon glyphicon-hand-down"></span>Withdraw Amount</a>
+
+
+    <a  class="nav-link" (click)="openDeposit()"><span class="glyphicon glyphicon-hand-up"></span>Deposit Amount</a>
+
+    <a  class="nav-link"(click)="openFund()"><span class="glyphicon glyphicon-send"></span> Transfer</a>
+
+    <a  class="nav-link" (click)="openDetails()"><span class="glyphicon glyphicon-check"></span>Show Details</a>
+
+    <a  class="nav-link" (click)="openTransaction()"><span class="glyphicon glyphicon-print"></span>Print Transactions</a>
+
+    <a  class="nav-link" (click)="openUpdate()" ><span class="glyphicon glyphicon-edit"></span>Update Details</a>
+
+    <a  class="nav-link" (click)="openDelete()"><span class="glyphicon glyphicon-trash"></span>Delete Account</a>
+
+    <a  class="nav-link" (click)="openLogout()"><span class="glyphicon glyphicon-off"></span>Logout</a>
+
+</div>
+
+
+<div class="jumbotron">
+    
+        <div>
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        
+                        <th>Transaction Id</th>
+                        <th>Transaction Date and Time</th>
+                        <th>Transaction Type</th>
+                        <th>Account</th>
+                        <th>Transfer Account</th>
+                        <th>Transaction Amount</th>
+                        <th>Updated Balance </th>
+                    </tr>
+                    <tr *ngFor="let i of transactions">
+                        <td>{{i.transId}}</td>
+                        <td>{{i.transTime}}</td>
+                        <td>{{i.tType}}</td>
+                        <td>{{i.recId}}</td>
+                        <td>{{i.sendId}}</td>
+                        <td>{{i.transAmount}}</td>
+                        <td>{{i.updatedBalance}}</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,42 @@
+<div class="navbar">
+
+    
+    <a  class="nav-link" (click)="openHome()"><span class="glyphicon glyphicon-home"></span>Home</a>
+
+
+
+    <a  class="nav-link" (click)="openWithdraw()"><span class="glyphicon glyphicon-hand-down"></span>Withdraw Amount</a>
+
+
+    <a  class="nav-link" (click)="openDeposit()"><span class="glyphicon glyphicon-hand-up"></span>Deposit Amount</a>
+
+    <a  class="nav-link"(click)="openFund()"><span class="glyphicon glyphicon-send"></span> Transfer</a>
+
+    <a  class="nav-link" (click)="openDetails()"><span class="glyphicon glyphicon-check"></span>Show Details</a>
+
+    <a  class="nav-link" (click)="openTransaction()"><span class="glyphicon glyphicon-print"></span>Print Transactions</a>
+
+    <a  class="nav-link" (click)="openUpdate()" ><span class="glyphicon glyphicon-edit"></span>Update Details</a>
+
+    <a  class="nav-link" (click)="openDelete()"><span class="glyphicon glyphicon-trash"></span>Delete Account</a>
+
+    <a  class="nav-link" (click)="openLogout()"><span class="glyphicon glyphicon-off"></span>Logout</a>
+
+</div>
+<body>
+    <br><br><br>
+    <div class="signup-form">
+        <form #userForm="ngForm">
+            <h2 style="padding-left: 90px;">Welcome</h2>
+            
+            <hr>
+           <h4 style="color: black;"> Username-{{user.username}}</h4>
+           <br>
+           <h4 style="color: black;"> Account Number-{{user.accountNumber}}</h4>
+        </form>
+        
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body>
+                              
+

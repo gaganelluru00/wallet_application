@@ -1,0 +1,53 @@
+<body>
+<br><br>
+
+<div class="login-form">
+    <form #loginForm="ngForm">
+		<div class="avatar">
+			<img src="https://image.shutterstock.com/image-vector/w-letters-business-logo-symbols-260nw-747782368.jpg" alt="Wallet">
+		</div>
+        <h2 class="text-center" style="color: black;">Login</h2>   
+        <div class="form-group">
+            <div class="form-group has-feedback has-feedback-left has-success">
+                <label style="color: black;">Username:</label><br>
+                
+                <input type="text"  style="border-radius: 10px;" required #userRef="ngModel" class="form-control" [(ngModel)]="loginDetails.username" name="username" ngModel>
+                <i class="glyphicon glyphicon-user form-control-feedback"></i>
+    <div [hidden]="userRef.valid||userRef.untouched" class="alert alert-danger">
+        please enter your username
+    </div>
+            </div>
+        </div>
+		<div class="form-group has-feedback has-feedback-left has-success">
+            <label style="color: black;">Password:</label><br>
+            <input type="password" style="border-radius: 10px;" required #passRef="ngModel" minlength="6" class="form-control" [(ngModel)]="loginDetails.password" name="password" ngModel>
+            <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+            <div *ngIf="passRef.errors&&(passRef.dirty||passRef.touched)" class="alert alert-danger">
+                <div [hidden]="!passRef.errors.required" >
+                    please enter your password
+                </div>
+                <div [hidden]="!passRef.errors.minlength" >
+                    password should be atleast 6 characters
+                </div>
+            </div>
+        </div>
+        <div class="form-group has-feedback has-feedback-left has-success">
+            <label style="color: black;">Account Number</label>
+            <input type="text" style="border-radius: 10px;" required #accRef="ngModel" class="form-control" [(ngModel)]="loginDetails.accNumber" name="accNumber" ngModel>
+            <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+            <div [hidden]="accRef.valid||accRef.untouched" class="alert alert-danger">
+                please enter the account number
+            </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary" (click)="loginValidate()">Login</button>
+        </div>
+        <div id="register-link" class="text-right">
+           
+        </div>       
+       
+    </form>
+    
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
